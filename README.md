@@ -22,7 +22,7 @@ Open http://127.0.0.1:8000.
 
 Chatterbox downloads its model the first time the app generates speech. After that download, voice cloning and speech generation run locally without an API key or network request. The model download is large and requires internet access only on that first run.
 
-The installed Chatterbox multilingual model does not support Nepali. The UI leaves Nepali visible but disabled rather than producing an inaccurate language output.
+The installed Chatterbox multilingual model does not support Nepali.
 
 ## Share through Cloudflare
 
