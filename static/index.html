@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b2c">
+  <title>Heartline Voice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Heartline Voice home"><span class="brand-mark">H</span><span>heartline</span></a>
+      <span class="privacy-pill"><span class="privacy-dot"></span> private studio</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">voice, made personal</p>
+      <h1>Say it in <em>your</em> voice.</h1>
+      <p class="lede">Create a gentle voice twin from a short recording, then turn the words you are feeling into something they can hear.</p>
+    </section>
+
+    <section class="workspace" aria-label="Voice cloning studio">
+      <div class="panel sample-panel">
+        <div class="panel-heading"><span class="step">01</span><div><h2>Bring your voice</h2><p>One clear recording is enough to begin.</p></div></div>
+        <label class="upload-zone" id="uploadZone" for="sampleInput">
+          <input id="sampleInput" type="file" accept="audio/*,video/mp4,.mp4" hidden>
+          <span class="upload-icon">↥</span>
+          <strong id="uploadTitle">Drop a recording here</strong>
+          <span id="uploadMeta">or browse an audio or MP4 file · up to 25 MB</span>
+        </label>
+        <label class="consent"><input id="consentInput" type="checkbox"><span>I own this voice or have permission to clone it.</span></label>
+        <button class="button button-dark full" id="cloneButton" disabled><span class="button-label">Create my voice</span><span class="spinner"></span><span class="arrow">→</span></button>
+        <p class="microcopy">Your recording stays on this computer and is used as the local voice reference.</p>
+      </div>
+
+      <div class="panel message-panel">
+        <div class="panel-heading"><span class="step">02</span><div><h2>Give it a feeling</h2><p>Pick a note, or write one from the heart.</p></div></div>
+        <div class="preset-grid" role="group" aria-label="Romantic message presets">
+          <button class="preset active" data-text="I keep finding little pieces of you in every good part of my day."><span>✦</span><span>Little pieces</span></button>
+          <button class="preset" data-text="If I could pause one moment, it would be this one with you."><span>◷</span><span>Pause time</span></button>
+          <button class="preset" data-text="You feel like home, even when the world around us is changing."><span>⌂</span><span>Feels like home</span></button>
+          <button class="preset" data-text="I would choose you in every version of this life."><span>∞</span><span>Every version</span></button>
+        </div>
+        <label class="language-field" for="languageSelect"><span>Speech language</span><select id="languageSelect"><option value="en">English</option><option value="hi">Hindi</option><option value="ko">Korean</option><option value="ne" disabled>Nepali (not available offline)</option></select></label>
+        <label class="text-wrap" for="messageInput"><span class="sr-only">Message to speak</span><textarea id="messageInput" maxlength="1200" rows="5" placeholder="Write something only you would say...">I keep finding little pieces of you in every good part of my day.</textarea><span class="character-count"><span id="charCount">68</span> / 1200</span></label>
+        <button class="button button-coral full" id="speakButton" disabled><span class="button-label">Speak this for me</span><span class="spinner"></span><span class="arrow">↗</span></button>
+        <div class="player" id="player" hidden><div class="player-orb">♫</div><div class="player-copy"><strong>Your message is ready</strong><span>Press play whenever you are ready.</span></div><audio id="audioPlayer" controls></audio></div>
+        <p class="error" id="errorMessage" role="alert" hidden></p>
+      </div>
+    </section>
+
+    <footer class="footer"><span>made for the words that matter</span><span>Use only with consent.</span></footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
